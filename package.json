@@ -19,5 +19,8 @@
   "homepage": "https://github.com/Kelel1/part4#readme",
   "dependencies": {
     "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
   }
 }
