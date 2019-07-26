@@ -1,0 +1,20 @@
+{
+  "name": "blog-list",
+  "version": "0.0.1",
+  "description": "[Part 4 of the Helsinki Fullstack-Development Mooc](https://fullstackopen.com/en/part4)",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kelel1/part4.git"
+  },
+  "author": "Kern Elder",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Kelel1/part4/issues"
+  },
+  "homepage": "https://github.com/Kelel1/part4#readme"
+}
