@@ -1,15 +1,8 @@
-require('dotenv').config()
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const mongoose = require('mongoose')
-
-let blogs = [{id: 1, title: "Kel", author: "Elder", url: "https/fes", likes: 45}]
-
-// Middlewares
-app.use(bodyParser.json())
-app.use(cors())
 
 const blogSchema = mongoose.Schema({
   title: String,
@@ -20,18 +13,15 @@ const blogSchema = mongoose.Schema({
 
 const Blog = mongoose.model('Blog', blogSchema)
 
-const mongoUrl = 'mongodb://localhost/bloglist'
+const mongoUrl = 
+    'mongodb+srv://Kelder:ZF6kemCTS28tYAyn@cluster1-xo9e5.mongodb.net/phonebook-app?retryWrites=true&w=majority'
 mongoose.connect(mongoUrl, { useNewUrlParser: true })
 
 app.use(cors())
 app.use(bodyParser.json())
 
 app.get('/', (request, response) => {
-    response.send('<h1>Welcome to Blog-List</h1>')
-})
-
-app.get('/blogs', (request, response) => {
-    response.json(blogs)
+    response.send('<h1>Welcome to Blog List</h1>')
 })
 
 app.get('/api/blogs', (request, response) => {
@@ -41,8 +31,6 @@ app.get('/api/blogs', (request, response) => {
       response.json(blogs)
     })
 })
-
-
 
 app.post('/api/blogs', (request, response) => {
   const blog = new Blog(request.body)
