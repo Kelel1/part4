@@ -3,7 +3,7 @@ const app = express()
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const mongoose = require('mongoose')
-
+// site on heroku begins w/ floating
 const blogSchema = mongoose.Schema({
   title: String,
   author: String,
