@@ -1,5 +1,6 @@
 _ = require('lodash')
 const Blog = require('../models/blog')
+const User = require('../models/user')
 
 
 // Initial test blog entires
@@ -18,6 +19,19 @@ const initialBlogs = [
     },
 ]
 
+
+// Initial test user entires
+
+const initialUsers = [
+    {
+        username: 'Kell',
+        name: 'Kern',        
+    },
+    {
+        username: 'Kd',
+        name: 'Kadija',
+    }
+]
 const dummy = (blogs) => {
     return 1
 }
@@ -77,10 +91,16 @@ const blogsInDb = async () => {
     return blogs.map(blog => blog.toJSON())
 }
 
+const usersInDb = async () => {
+    const users = await User.find({})
+    return users.map(u => u.toJSON())
+}
 module.exports = {
     blogsInDb,
+    usersInDb,
     dummy,
     initialBlogs,
+    initialUsers,
     totalLikes,
     favoriteBlog,
     mostBlogs,
