@@ -1,11 +1,11 @@
 post http://localhost:3003/api/blogs
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1IsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Iktlcm4gRWxkZXIiLCJpZCI6IjVkNWRjYTllNmMwOWQ4MzNmYTZlNTE1OSIsImlhdCI6MTU2NjQ0MDE0MH0.lzIl1jTY93zYSuke-PZwHAN7-xt7pUeTTA2FbPWndz4
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Iktlcm4gRWxkZXIiLCJpZCI6IjVkNWRjYTllNmMwOWQ4MzNmYTZlNTE1OSIsImlhdCI6MTU2NzAzNDA1M30.s4bkPyDK-cbnVThDWxbDufs6BxzXDNzFrCHyO5IRJP4
 
 {
-    "title": "Sane",
-    "author": "NSaneNDaMembrain",
-    "url": "www.sanity.com",
+    "title": "Fivy",
+    "author": "555",
+    "url": "www.5.com",
     "user": "5d5dca9e6c09d833fa6e5159",
-    "likes": 72
+    "likes": 4498
 }

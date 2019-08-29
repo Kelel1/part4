@@ -12,6 +12,7 @@ const logger = require('./utils/logger')
 
 logger.info('connecting to', config.MONGODB_URI)
 
+mongoose.set('useCreateIndex', true)
 mongoose.connect(config.MONGODB_URI, { useNewUrlParser: true })
     .then(() => {
         logger.info('connected to MongoDB')
@@ -22,8 +23,9 @@ mongoose.connect(config.MONGODB_URI, { useNewUrlParser: true })
 
     app.use(cors())
     app.use(express.static('build'))
-    app.use(bodyParser.json())
-    app.use(middleware.requestLogger)
+    app.use(bodyParser.json())    
+    app.use(middleware.requestLogger)    
+    app.use(middleware.tokenExtractor)
 
     app.use('/api/blogs', blogsRouter)
     app.use('/api/users', usersRouter)
