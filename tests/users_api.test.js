@@ -1,4 +1,5 @@
 const mongoose = require('mongoose')
+const bcrypt = require('bcrypt')
 const supertest = require('supertest')
 const helper = require('../utils/list_helper')
 const app = require('../app')
@@ -8,7 +9,9 @@ const User = require('../models/user')
 describe('when there is initially one user at db', () => {
     beforeEach(async () => {
         await User.deleteMany({})
-        const user = new User({ username: 'root', password: 'sekret'})
+        const saltRounds = 10
+        const passwordHash = await bcrypt.hash('sekret', saltRounds)
+        const user = new User({ username: 'root', password: passwordHash})
         await user.save()
     })
 
