@@ -1,4 +1,4 @@
-_ = require('lodash')
+const _ = require('lodash')
 const Blog = require('../models/blog')
 const User = require('../models/user')
 
@@ -76,14 +76,24 @@ const mostBlogs = (blogs) => {
     return result
 }
 
-const mostLikes = (blogs) => {
-    const totalLikes = 0
+const mostLikes = (a) => {
+  let b = 0
+  let c = {}
+  let d = []
+  let e = {}
+  _.forEach(a, (val, key) => {
+   b = 0
+  _.forEach(val, n => {
+    b += n.likes
+    c = {author: n.author, likes: b}
+    d.push(c)
+  })
+  
+})
+let  max = _.maxBy(d, k => k.likes)
 
-    const authors = _.uniq(_.map(blogs, 'author'))
-    const a = _.groupBy(blogs, 'author')
-
-    
-    return a['Edsger W. Dijkstra']
+e = {...e, author: max.author, blogs: a[max.author].length}
+return e
 }
 
 const blogsInDb = async () => {

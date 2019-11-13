@@ -1,4 +1,5 @@
 const listHelper = require('../utils/list_helper')
+const _ = require('lodash')
 
 describe ('most likes', () => {
 
@@ -40,7 +41,7 @@ describe ('most likes', () => {
           title: "TDD harms architecture",
           author: "Robert C. Martin",
           url: "http://blog.cleancoder.com/uncle-bob/2017/03/03/TDD-Harms-Architecture.html",
-          likes: 0,
+          likes: 1,
           __v: 0
         },
         {
@@ -52,9 +53,10 @@ describe ('most likes', () => {
           __v: 0
         }  
       ]
-
+      const authors = _.groupBy(blogs, 'author')
     test('of a blog list with several blogs', () => {
+        
 
-        expect(listHelper.mostLikes(blogs)).toEqual({'author': 'k', 'likes': 50})
+        expect(listHelper.mostLikes(authors)).toEqual({'author': 'Robert C. Martin', 'blogs': 3})
     })
 })

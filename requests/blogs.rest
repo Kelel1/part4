@@ -1,5 +1,14 @@
-delete http://localhost:3003/api/blogs/5d68123d7a8f7e2fe38bd9cc
+post http://localhost:3003/api/blogs
 Content-Type: application/json
-Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJpZCI6IjVkNjgwYzQxMzMyYjA3MzA4YjUzMTJiMSIsImlhdCI6MTU2NzEwMjU3Nn0.NGAR-sxQTbuCDYrVvUUS_mIvwOHC2K8An5mLspQ1rFc
+Authorization: bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InJvb3QiLCJpZCI6IjVkNjgwYzQxMzMyYjA3MzA4YjUzMTJiMSIsImlhdCI6MTU2OTQxOTQzNX0.1RylRNWbcgm29NWHdRa8ZKxukCPHsvAY80VsgHsj6Hc
+
+{
+    "title": "Learning React",
+    "author": "Fullstack Helsinki",
+    "url": "www.learning-react.com",
+    "likes": 987
+}
+
+
 
 
